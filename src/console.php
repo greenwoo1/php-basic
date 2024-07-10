@@ -20,7 +20,7 @@ echo "Enter third value." . PHP_EOL;
 
 $thirdValueFromUser = fgets(STDIN);
 
-$averageValue = (float)$firstValueFromUser + (float)$secondValueFromUser + (float)$thirdValueFromUser / 3;
+$averageValue = ((float)$firstValueFromUser + (float)$secondValueFromUser + (float)$thirdValueFromUser) / 3;
 
 echo "Average value is $averageValue" . PHP_EOL;
 
