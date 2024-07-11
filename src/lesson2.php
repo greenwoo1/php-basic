@@ -91,6 +91,32 @@
 //$e = 2;
 //
 //echo $a + $b + $c + $d + $e / 5;
+//
+//echo $b . PHP_EOL;
 
-echo $b . PHP_EOL;
 
+
+//$vatiable = (bool)false;
+//$vatiable2 = (bool)0;
+//$vatiable3 = (bool)-0;
+//$vatiable4 = (bool)0.0;
+//$vatiable5 = (bool)-0.0;
+//$vatiable6 = (bool)'';
+//$vatiable7 = (bool)'0';
+//$vatiable8 = (bool)null;
+//
+//
+//
+//var_dump($vatiable);
+//var_dump($vatiable2);
+//var_dump($vatiable3);
+//var_dump($vatiable4);
+//var_dump($vatiable5);
+//var_dump($vatiable6);
+//var_dump($vatiable7);
+//var_dump($vatiable8);
+
+$x = 8;
+$y = '8';
+
+var_dump($x !== $y);
