@@ -94,34 +94,56 @@ function test(bool $switch): never
     exit();
 }
 
-function apiFetch(string $uuid): mixed
-{
-    $data = apiCall($uuid);
+//function apiFetch(string $uuid): mixed
+//{
+//    $data = apiCall($uuid);
+//
+//    return $data;
+//}
 
-    return $data;
+
+//function search(?string $location = null, ?string $sector = null, ?string $salaryMin = null, ?string $salaryMax = null)
+//{
+//    $query = '';
+//    if ($location !== null) {
+//        // todo add query condition
+//    }
+//
+//    if ($sector !== null) {
+//        // todo add query condition
+//    }
+//
+//    if ($salaryMin !== null) {
+//        // todo add query condition
+//    }
+//
+//    if ($salaryMax !== null) {
+//        // todo add query condition
+//    }
+//}
+//
+//search(null,null,'1500', '3000');
+//
+//search(salaryMax: '3000');
+
+function sum(...$numbers)
+{
+    var_dump($numbers);
 }
 
+sum(5);
 
-function search(?string $location = null, ?string $sector = null, ?string $salaryMin = null, ?string $salaryMax = null)
+function div(float $number, int $div = 2): float
 {
-    $query = '';
-    if ($location !== null) {
-        // todo add query condition
+    if ($div < 2 ) {
+        return $number;
     }
 
-    if ($sector !== null) {
-        // todo add query condition
-    }
-
-    if ($salaryMin !== null) {
-        // todo add query condition
-    }
-
-    if ($salaryMax !== null) {
-        // todo add query condition
-    }
+    return $number / $div;
 }
 
-search(null,null,'1500', '3000');
+$mynumber = 10;
 
-search(salaryMax: '3000');
+$result = div($mynumber);
+
+echo $result . PHP_EOL;
