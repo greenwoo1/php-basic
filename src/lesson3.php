@@ -35,7 +35,7 @@
 //    echo "fail" . PHP_EOL;
 //}
 
-$status = 301;
+//$status = 301;
 
 //if ($status === 200) {
 //    echo "OK" . PHP_EOL;
@@ -47,16 +47,29 @@ $status = 301;
 //    echo "Default" . PHP_EOL;
 //}
 
-switch ($status) {
-    case 200:
-        echo "OK" . PHP_EOL;
-        break;
-    case 404:
-        echo "Not Found" . PHP_EOL;
-        break;
-    case 300:
-        echo "Bad Request" . PHP_EOL;
-        break;
-    default:
-        echo "Default" . PHP_EOL;
-}
+//switch ($status) {
+//    case 200:
+//        echo "OK" . PHP_EOL;
+//        break;
+//    case 404:
+//        echo "Not Found" . PHP_EOL;
+//        break;
+//    case 300:
+//        echo "Bad Request" . PHP_EOL;
+//        break;
+//    default:
+//        echo "Default" . PHP_EOL;
+//}
+
+$status = 200;
+
+$result = match ($status) {
+    200 => "OK" . PHP_EOL,
+    404 => "Not Found" . PHP_EOL,
+    300 => "Internal Server Error" . PHP_EOL,
+    default => "Unknown status" . PHP_EOL
+
+};
+
+echo $result;
+
