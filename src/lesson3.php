@@ -76,7 +76,16 @@
 $text = "Hello, my name is John Doe. Test text for this lesson.";
 
 $length = strlen($text);
+$limit = 15;
 
-echo $length . PHP_EOL;
+if ($length > $limit) {
+    if (($pos = strpos($text, '.')) !== false) {
+        $first = substr($text, 0, $pos + 1);
+        $second = substr($text, 27, $pos + 1);
+    }
+}
 
-var_dump($length . PHP_EOL);
+var_dump($first);
+var_dump($second);
+
+//var_dump(strpos($text, '.', 27));
