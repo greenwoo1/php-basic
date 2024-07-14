@@ -61,15 +61,22 @@
 //        echo "Default" . PHP_EOL;
 //}
 
-$status = 200;
+//$status = 200;
+//
+//$result = match ($status) {
+//    200 => "OK" . PHP_EOL,
+//    404 => "Not Found" . PHP_EOL,
+//    300 => "Internal Server Error" . PHP_EOL,
+//    default => "Unknown status" . PHP_EOL
+//
+//};
+//
+//echo $result;
 
-$result = match ($status) {
-    200 => "OK" . PHP_EOL,
-    404 => "Not Found" . PHP_EOL,
-    300 => "Internal Server Error" . PHP_EOL,
-    default => "Unknown status" . PHP_EOL
+$text = "Hello, my name is John Doe. Test text for this lesson.";
 
-};
+$length = strlen($text);
 
-echo $result;
+echo $length . PHP_EOL;
 
+var_dump($length . PHP_EOL);
