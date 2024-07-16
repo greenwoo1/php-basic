@@ -13,7 +13,7 @@ $radius = converter($value);
 
 echo circleSquare($radius, pi()) . PHP_EOL;
 
-function converter($string): float
+function converter(string $string): float
 {
     if (is_numeric($string) === false) {
         echo "Error! The radius must be a number." . PHP_EOL;
