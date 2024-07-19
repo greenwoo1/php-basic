@@ -4,30 +4,42 @@ declare(strict_types = 1);
 $value = null;
 $multiplier = null;
 
-echo "Enter the number you want to enter into the exponentiation" . PHP_EOL;
-
-$value = fgets(STDIN);
-
-echo "Enter the number you want to multiply by" . PHP_EOL;
-
-$multiplier = fgets(STDIN);
+$pattern = '/^[\@\$\!\)\*\#%\^&\(\)\-\_\=\+\{\}\[\]\|\\\:\"\;\'\<\>\,\.\?\/]+$/';
 
 
 
 
-
-
-function validator(string $value, string $multiplier): int|float
+function power(float $value, int $multiplier): float
 {
+    if (!is_int($multiplier)) {
+        if (is_string($value)) {
 
+              return $value ** $multiplier;
 
-    if (is_string($multiplier) === true && is_float($multiplier) === false) {
+        } else {
 
-        return (int)$multiplier;
+            echo "Error: Base and exponentiation must not be strings." . PHP_EOL;
+            return 0;
+        }
     } else {
-        echo "Error! Addend must be an integer!" . PHP_EOL;
-    }
 
-    return (float)$value;
+        echo "Error: Degree must be an integer." . PHP_EOL;
+        return 0;
+    }
 }
 
+function validator(mixed $value, mixed $multiplier): void
+{
+    if (!is_int($multiplier)) {
+        echo "Error: The number must be an integer" . PHP_EOL;
+    } else {
+        if ()
+    }
+}
+
+$value = 5;
+$multiplier = 5;
+
+var_dump($value);
+
+echo power($value, $multiplier) . PHP_EOL;
