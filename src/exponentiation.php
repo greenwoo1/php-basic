@@ -44,24 +44,10 @@ $value = trim(fgets(STDIN));
 echo "Write the second number" . PHP_EOL;
 $multiplier = trim(fgets(STDIN));
 
-echo "variable value: ";
-var_dump($value);
-
-echo "variable multiplier: ";
-var_dump($multiplier);
-
 validator($value, $multiplier);
-
 
 $value = converterToFloat($value);
 $multiplier = converterToInteger($multiplier);
-
-echo "variable value (after conversion): ";
-var_dump($value);
-
-echo "variable multiplier (after conversion): ";
-var_dump($multiplier);
-
 
 $result = power($value, $multiplier);
 echo "Result: " . $result . PHP_EOL;
