@@ -1,45 +1,67 @@
 <?php
-declare(strict_types = 1);
+declare(strict_types=1);
 
 $value = null;
 $multiplier = null;
 
-$pattern = '/^[\@\$\!\)\*\#%\^&\(\)\-\_\=\+\{\}\[\]\|\\\:\"\;\'\<\>\,\.\?\/]+$/';
+function validator(mixed $value, mixed $multiplier): void
+{
+    $pattern = '/^[\@\$\!\)\*\#%\^&\(\)\-\_\=\+\{\}\[\]\|\\\:\"\;\'\<\>\,\.\?\/]+$/';
 
+    if (!is_numeric($value) || !is_numeric($multiplier)) {
+        echo "Error: Base and exponentiation must be numeric." . PHP_EOL;
 
+    }
 
+    if (preg_match($pattern, (string)$value) || preg_match($pattern, (string)$multiplier)) {
+        echo "Error: The entered value has invalid characters" . PHP_EOL;
+
+    }
+
+    if (!is_int((int)$multiplier)) {
+        echo "Error: The multiplier must be an integer" . PHP_EOL;
+    }
+}
+
+function converterToFloat(string &$string): float
+{
+    return (float)$string;
+}
+
+function converterToInteger(string &$string): int
+{
+    return (int)$string;
+}
 
 function power(float $value, int $multiplier): float
 {
-    if (!is_int($multiplier)) {
-        if (is_string($value)) {
-
-              return $value ** $multiplier;
-
-        } else {
-
-            echo "Error: Base and exponentiation must not be strings." . PHP_EOL;
-            return 0;
-        }
-    } else {
-
-        echo "Error: Degree must be an integer." . PHP_EOL;
-        return 0;
-    }
+    return $value ** $multiplier;
 }
 
-function validator(mixed $value, mixed $multiplier): void
-{
-    if (!is_int($multiplier)) {
-        echo "Error: The number must be an integer" . PHP_EOL;
-    } else {
-        if ()
-    }
-}
+echo "Write the first number" . PHP_EOL;
+$value = trim(fgets(STDIN));
 
-$value = 5;
-$multiplier = 5;
+echo "Write the second number" . PHP_EOL;
+$multiplier = trim(fgets(STDIN));
 
+echo "variable value: ";
 var_dump($value);
 
-echo power($value, $multiplier) . PHP_EOL;
+echo "variable multiplier: ";
+var_dump($multiplier);
+
+validator($value, $multiplier);
+
+
+$value = converterToFloat($value);
+$multiplier = converterToInteger($multiplier);
+
+echo "variable value (after conversion): ";
+var_dump($value);
+
+echo "variable multiplier (after conversion): ";
+var_dump($multiplier);
+
+
+$result = power($value, $multiplier);
+echo "Result: " . $result . PHP_EOL;
