@@ -1,53 +1,34 @@
 <?php
 declare(strict_types=1);
 
-$value = null;
-$multiplier = null;
-
-function validator(mixed $value, mixed $multiplier): void
-{
-    $pattern = '/^[\@\$\!\)\*\#%\^&\(\)\-\_\=\+\{\}\[\]\|\\\:\"\;\'\<\>\,\.\?\/]+$/';
-
-    if (!is_numeric($value) || !is_numeric($multiplier)) {
-        echo "Error: Base and exponentiation must be numeric." . PHP_EOL;
-
-    }
-
-    if (preg_match($pattern, (string)$value) || preg_match($pattern, (string)$multiplier)) {
-        echo "Error: The entered value has invalid characters" . PHP_EOL;
-
-    }
-
-    if (!is_int((int)$multiplier)) {
-        echo "Error: The multiplier must be an integer" . PHP_EOL;
-    }
-}
-
-function converterToFloat(string &$string): float
-{
-    return (float)$string;
-}
-
-function converterToInteger(string &$string): int
-{
-    return (int)$string;
-}
+$value = 5;
+$multiplier = 9;
+$valueLink = 5;
 
 function power(float $value, int $multiplier): float
 {
     return $value ** $multiplier;
 }
 
-echo "Write the first number" . PHP_EOL;
-$value = trim(fgets(STDIN));
-
-echo "Write the second number" . PHP_EOL;
-$multiplier = trim(fgets(STDIN));
-
-validator($value, $multiplier);
-
-$value = converterToFloat($value);
-$multiplier = converterToInteger($multiplier);
-
 $result = power($value, $multiplier);
-echo "Result: " . $result . PHP_EOL;
+
+echo $result . PHP_EOL;
+
+
+function powerLink (float &$value, int $multiplier = 2): void
+{
+    $value = $value ** $multiplier;
+}
+
+echo $valueLink . PHP_EOL;
+
+powerLink($valueLink, $multiplier);
+
+echo $valueLink . PHP_EOL;
+
+
+
+
+
+
+
