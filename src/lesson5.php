@@ -64,16 +64,16 @@ declare(strict_types = 1);
 //    echo $array[$i] . PHP_EOL;
 //}
 
-function randArray( int $length = 10, int $min = 1, int $max = 10 ) : array
-{
-    $array = [];
-    for ($i = 0; $i < $length; $i++) {
-        $array[] = rand($min, $max);
-    }
-    return $array;
-}
-
-$myArray = randArray();
-
-print_r($myArray);
+//function randArray( int $length = 10, int $min = 1, int $max = 10 ) : array
+//{
+//    $array = [];
+//    for ($i = 0; $i < $length; $i++) {
+//        $array[] = rand($min, $max);
+//    }
+//    return $array;
+//}
+//
+//$myArray = randArray();
+//
+//print_r($myArray);
 
